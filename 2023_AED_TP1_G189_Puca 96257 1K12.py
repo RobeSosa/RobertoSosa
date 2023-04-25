@@ -12,7 +12,7 @@ print("\nCabina de Peajes Centro de Cobros Internacional - Pase-Pase")
 print("--Sistema automatizado de Cobro--\n")
 print("*" * 20)
 
-patente = input("Ingrese los 7 Caracteres de la Patente, en mayuscula, sin espacios: ")
+patente = str(input("Ingrese los 7 Caracteres de la Patente, en mayuscula, sin espacios: "))
 tipo_vehic = int(input("Ingrese el tipo de vehiculo: '0' para Moto; '1' para Autos; '2' para Camiones: "))
 forma_pago = int(input("Ingrese la Forma de Pago: '1' para Manual; '2' para Telepeaje: "))
 pais_cabina = int(input("Ingrese el Pais de la Cabina:  '0' Argentina; '1' Bolivia; '2' Brasil; '3' Paraguay; '4' Uruguay: "))
@@ -27,18 +27,22 @@ elif pais_cabina == 1:
 
 ctrl_pat = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ctrl_num_pat = "0123456789"
+p = patente
+# print(p[0], p[1])
+# print(len(p))
 
-if len(patente) > 7 or len(patente) < 7: # para determirar si pertence o no al grupo de 7 caracteres
+if len(p) > 7 or len(p) < 7: # para determirar si pertence o no al grupo de 7 caracteres
     origen_pat = "OTRO"
-elif patente[0] in ctrl_pat and patente[1] in ctrl_pat and patente[2] in ctrl_pat and patente[3] in ctrl_pat and patente[4] in ctrl_num_pat and patente[5] in ctrl_num_pat and patente[6] in ctrl_num_pat:
+    print(len(p))
+elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_pat and p[3] in ctrl_pat and p[4] in ctrl_num_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
     origen_pat = "PARAGUAY"
-elif patente[0] in ctrl_pat and patente[1] in ctrl_pat and patente[2] in ctrl_pat and patente[3] in ctrl_num_pat and patente[4] in ctrl_num_pat and patente[5] in ctrl_num_pat and patente[6] in ctrl_num_pat:
+elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_pat and p[3] in ctrl_num_pat and p[4] in ctrl_num_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
     origen_pat = "URUGUAY"
-elif patente[0] in ctrl_pat and patente[1] in ctrl_pat and patente[2] in ctrl_pat and patente[3] in ctrl_num_pat and patente[4] in ctrl_pat and patente[5] in ctrl_num_pat and patente[6] in ctrl_num_pat:
+elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_pat and p[3] in ctrl_num_pat and p[4] in ctrl_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
     origen_pat = "BRASIL"
-elif patente[0] in ctrl_pat and patente[1] in ctrl_num_pat and patente[2] in ctrl_num_pat and patente[3] in ctrl_num_pat and patente[4] in ctrl_num_pat and patente[5] in ctrl_num_pat and patente[6] in ctrl_num_pat:
+elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_num_pat and p[3] in ctrl_num_pat and p[4] in ctrl_num_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
     origen_pat = "BOLIVIA"
-elif patente[0] in ctrl_pat and patente[1] in ctrl_pat and patente[2] in ctrl_pat and patente[3] in ctrl_num_pat and patente[4] in ctrl_pat and patente[5] in ctrl_pat and patente[6] in ctrl_pat:
+elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_num_pat and p[3] in ctrl_num_pat and p[4] in ctrl_num_pat and p[5] in ctrl_pat and p[6] in ctrl_pat:
     origen_pat = "ARGENTINA"
 else:
     origen_pat = "OTRO"
