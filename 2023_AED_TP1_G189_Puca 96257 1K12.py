@@ -33,7 +33,6 @@ p = patente
 
 if len(p) > 7 or len(p) < 7: # para determirar si pertence o no al grupo de 7 caracteres
     origen_pat = "OTRO"
-    print(len(p))
 elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_pat and p[3] in ctrl_pat and p[4] in ctrl_num_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
     origen_pat = "PARAGUAY"
 elif p[0] in ctrl_pat and p[1] in ctrl_pat and p[2] in ctrl_pat and p[3] in ctrl_num_pat and p[4] in ctrl_num_pat and p[5] in ctrl_num_pat and p[6] in ctrl_num_pat:
